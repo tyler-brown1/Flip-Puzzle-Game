@@ -39,7 +39,11 @@ h1{
 }
 
 .square:hover:not(.clicked){
-    background-color: #b0b0ee;
+    background-color: #9090ee;
+}
+
+.square:hover{
+    background-color: #ffa5a5;
 }
 
 #reset{
@@ -65,5 +69,4 @@ h1{
     background-size: 50%;
     background-repeat: no-repeat;
 }
-
 
