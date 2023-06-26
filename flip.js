@@ -91,7 +91,7 @@ text = [ // text displayed at the top
     "Wecome to Flip! Click a tile to flip the surrounding tiles",
     "Corner tiles behave differently",
     "Let's try a bigger grid",
-    "Let's make it less obvious",
+    "Let's try a bigger grid",
     "Symmetric!",
     "Tricky one?",
     "BIG GRID!",
@@ -130,8 +130,8 @@ function setGame(){
     h = levelTiles[level].length;
 
     board = document.getElementById("board"); //scale tile
-    board.style.width = w*scale[level] + "px";
-    board.style.height = h*scale[level] + "px";
+    board.style.width = w*scale[level]+4 + "px";
+    board.style.height = h*scale[level]+4 + "px";
 
     
     while(board.firstChild){ // remove all tiles
@@ -145,6 +145,19 @@ function setGame(){
             cur.id = "-"+i+j;
             cur.classList.add("square");
             
+            if(j==0){
+                cur.style.borderLeft = "4px solid black";
+            }
+            if(j==w-1){
+                cur.style.borderRight = "4px solid black";
+            }
+            if(i==0){
+                cur.style.borderTop = "4px solid black";
+            }
+            if(i==h-1){
+                cur.style.borderBottom = "4px solid black";
+            }
+
             if(levelTiles[level][i][j] != 2){
                 cur.addEventListener("click",changeColor);
             }
@@ -219,10 +232,12 @@ function changeColor(){
             count+=1;
         }}
     
+    
     if(count==h*w){    // if level completed
-        wait(200)
+        wait(200);
         level+=1;
         document.getElementById("level").innerText = "LEVEL " + (level+1)
         setGame();
     }
+
 }
