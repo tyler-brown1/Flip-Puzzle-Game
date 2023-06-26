@@ -109,7 +109,7 @@ const directions3 = [[0,0],[0,1],[0,-1],[1,0],[-1,0],[1,1],[-1,1],[1,-1],[-1,-1]
 
 const scale = [120,100,75,75,75,75,65,100,75,75,100,80,75,45] // scale multiplier for each level
 
-var level = 10;
+var level = 0;
 var count = 0;
 
 window.onload = function(){
