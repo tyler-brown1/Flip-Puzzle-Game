@@ -234,10 +234,9 @@ function changeColor(){
     
     
     if(count==h*w){    // if level completed
-        wait(200);
         level+=1;
         document.getElementById("level").innerText = "LEVEL " + (level+1)
-        setGame();
+        setTimeout(setGame,300);
     }
 
 }
